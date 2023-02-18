@@ -9,7 +9,7 @@ export const logger = createLogger({
 
   transports: [
     new transports.File({
-      filename: './logs/app.log',
+      filename: `${__dirname}/logs/app.log`,
       maxsize: 5242880, // 5mb
       maxFiles: 5,
     }),
