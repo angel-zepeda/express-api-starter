@@ -9,5 +9,6 @@ router.get('/healthy', (_req: Request, res: Response) => {
 
 // User routes
 router.get('/users', userController.getAll)
+router.get('/user/:id', userController.getById)
 
 export default router

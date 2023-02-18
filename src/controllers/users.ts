@@ -13,6 +13,19 @@ class UserController {
       return res.status(500).json({ error })
     }
   }
+
+  async getById(req: Request, res: Response) {
+    try {
+      const { id } = req.params
+      const user = await User.findById(id)
+
+      if (!user) return res.status(400).json({ message: 'NOT FOUND' })
+
+      return res.status(200).json({ user })
+    } catch (error) {
+      return res.status(500).json({ error })
+    }
+  }
 }
 
 export const userController = new UserController()
